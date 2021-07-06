@@ -15,6 +15,12 @@ mongoose.connect(
 // REQUIRE THE ROUTE
 app.use("/", require("./routes/studentRoute"));
 
+app.use("/login", (req, res) => {
+  res.send({
+    token: "test123",
+  });
+});
+
 app.listen(3001, () =>
   console.log("Express Server is Running! On PORT : 3001")
 );
